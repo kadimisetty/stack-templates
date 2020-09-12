@@ -2,7 +2,6 @@
 name:                {{name}}
 version:             0.1.0.0
 github:              "{{github-username}}{{^github-username}}githubuser{{/github-username}}/{{name}}"
-license:             Copyright {{author-name}}
 author:              "{{author-name}}{{^author-name}}Author name here{{/author-name}}"
 maintainer:          "{{author-email}}{{^author-email}}example@example.com{{/author-email}}"
 copyright:           "{{copyright}}{{^copyright}}{{year}}{{^year}}2019{{/year}} {{author-name}}{{^author-name}}Author name here{{/author-name}}{{/copyright}}"
@@ -52,19 +51,22 @@ tests:
 import Distribution.Simple
 main = defaultMain
 
-{-# START_FILE src/Lib.hs #-}
-module Lib
-    ( foo
-    ) where
-
-foo :: Int
-foo = 42
-
 {-# START_FILE app/Main.hs #-}
 module Main where
 
 main :: IO ()
-main = putStrLn "hello world"
+main = putStrLn "Hello World!"
+
+{-# START_FILE src/Lib.hs #-}
+module Lib
+    ( answer
+    ) where
+
+answer :: Int
+answer = 42
+
+{-# START_FILE test/Spec.hs #-}
+{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
 {-# START_FILE test/LibSpec.hs #-}
 module LibSpec
@@ -77,8 +79,8 @@ import           Lib
 
 spec :: Spec
 spec = do
-  describe "foo" $ do
-    it "returns 42" $ foo 42 `shouldBe` 42
+  describe "answer" $ do
+    it "returns 42" $ answer `shouldBe` 42
 
 {-# START_FILE README.md #-}
 # {{name}}
@@ -86,6 +88,3 @@ spec = do
 {-# START_FILE .gitignore #-}
 .stack-work/
 *~
-
-{-# START_FILE test/Spec.hs #-}
-{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
