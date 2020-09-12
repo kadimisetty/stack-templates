@@ -57,32 +57,35 @@ module Main where
 main :: IO ()
 main = putStrLn "Hello World!"
 
-{-# START_FILE src/Lib.hs #-}
-module Lib
-    ( answer
+{-# START_FILE src/Foo.hs #-}
+module Foo
+    ( add'
     ) where
 
 -- TODO
-answer :: Int
-answer = 42
+add' :: Int -> Int -> Int
+add' = (+)
 
 {-# START_FILE test/Spec.hs #-}
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
-{-# START_FILE test/LibSpec.hs #-}
-module LibSpec
+{-# START_FILE test/FooSpec.hs #-}
+module FooSpec
   ( spec
   )
 where
 
 import           Test.Hspec
-import           Lib
+import           Foo
+
+main :: IO ()
+main = hspec spec
 
 spec :: Spec
 spec = do
   -- TODO
-  describe "answer" $ do
-    it "returns 42" $ answer `shouldBe` 42
+  describe "addition" $ do
+    it "returns 3 when given 1 and 2" $ add' 1 2 `shouldBe` 3
 
 {-# START_FILE README.md #-}
 # {{name}}
