@@ -44,8 +44,8 @@ tests:
     - -rtsopts
     - -with-rtsopts=-N
     dependencies:
-    - hspec
     - {{name}}
+    - hspec
 
 {-# START_FILE Setup.hs #-}
 import Distribution.Simple
