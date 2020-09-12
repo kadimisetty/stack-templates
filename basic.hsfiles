@@ -67,7 +67,7 @@ main :: IO ()
 main = putStrLn "hello world"
 
 {-# START_FILE test/Spec.hs #-}
-{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
+-- enable hspec discovery
 
 {-# START_FILE test/LibSpec.hs #-}
 module LibSpec
