@@ -66,9 +66,6 @@ module Main where
 main :: IO ()
 main = putStrLn "hello world"
 
-{-# START_FILE test/Spec.hs #-}
-{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
-
 {-# START_FILE test/LibSpec.hs #-}
 module LibSpec
   ( spec
@@ -89,3 +86,6 @@ spec = do
 {-# START_FILE .gitignore #-}
 .stack-work/
 *~
+
+{-# START_FILE test/Spec.hs #-}
+{-# OPTIONS_GHC -F -pgmF hspec-discover #-}
