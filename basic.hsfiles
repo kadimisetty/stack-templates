@@ -48,11 +48,9 @@ tests:
     - hspec
     - {{name}}
 
-
 {-# START_FILE Setup.hs #-}
 import Distribution.Simple
 main = defaultMain
-
 
 {-# START_FILE src/Lib.hs #-}
 module Lib
@@ -62,17 +60,14 @@ module Lib
 foo :: Int
 foo = 42
 
-
 {-# START_FILE app/Main.hs #-}
 module Main where
 
 main :: IO ()
 main = putStrLn "hello world"
 
-
 {-# START_FILE test/Spec.hs #-}
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
-
 
 {-# START_FILE test/LibSpec.hs #-}
 module LibSpec
@@ -88,10 +83,8 @@ spec = do
   describe "foo" $ do
     it "returns 42" $ foo 42 `shouldBe` 42
 
-
 {-# START_FILE README.md #-}
 # {{name}}
-
 
 {-# START_FILE .gitignore #-}
 .stack-work/
