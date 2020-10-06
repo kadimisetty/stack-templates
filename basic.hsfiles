@@ -22,6 +22,10 @@ dependencies:
 - base >= 4.7 && < 5
 - text
 
+default-extensions:
+- LambdaCase
+- ViewPatterns
+
 library:
   source-dirs: src
 
