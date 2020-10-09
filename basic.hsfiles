@@ -62,26 +62,26 @@ module Main where
 main :: IO ()
 main = putStrLn "Hello World!"
 
-{-# START_FILE src/Foo.hs #-}
-module Foo
+{-# START_FILE src/FooLib.hs #-}
+module FooLib
     ( plus
     ) where
 
 -- TODO
-plus :: Int -> Int -> Int
+plus :: Integer -> Integer -> Integer
 plus = (+)
 
 {-# START_FILE test/Spec.hs #-}
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
-{-# START_FILE test/FooSpec.hs #-}
-module FooSpec
+{-# START_FILE test/FooLibSpec.hs #-}
+module FooLibSpec
   ( spec
   )
 where
 
 import           Test.Hspec
-import           Foo
+import           FooLib
 
 main :: IO ()
 main = hspec spec
@@ -90,11 +90,11 @@ spec :: Spec
 spec = do
   -- TODO
   describe "plus" $ do
-    context "when given positive numbers" $ do
+    context "when given positive integers" $ do
       it "returns 3 when given 1 and 2" $ 1 `plus` 2 `shouldBe` 3
-    context "when given negative numbers" $ do
+    context "when given negative integers" $ do
       it "returns -3 when given -1 and -2" $ (-1) `plus` (-2) `shouldBe` (-3)
-    context "when given mixed sign numbers" $ do
+    context "when given mixed sign integers" $ do
       it "returns -1 when given 1 and -2" $ 1 `plus` (-2) `shouldBe` (-1)
 
 {-# START_FILE README.md #-}
