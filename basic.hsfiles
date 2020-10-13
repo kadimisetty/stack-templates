@@ -25,6 +25,7 @@ dependencies:
 default-extensions:
 - LambdaCase
 - ViewPatterns
+- OverloadedStrings
 
 library:
   source-dirs: src
