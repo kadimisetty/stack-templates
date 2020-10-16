@@ -26,6 +26,7 @@ default-extensions:
 - LambdaCase
 - ViewPatterns
 - OverloadedStrings
+- InstanceSigs
 
 library:
   source-dirs: src
