@@ -23,9 +23,16 @@ dependencies:
 - text
 
 default-extensions:
+- ApplicativeDo
+- BlockArguments
+- InstanceSigs
 - LambdaCase
-- ViewPatterns
+- MultiWayIf
 - OverloadedStrings
+- ScopedTypeVariables
+- TupleSections
+- ViewPatterns
+- ViewPatterns
 
 library:
   source-dirs: src
