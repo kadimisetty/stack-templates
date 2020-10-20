@@ -69,8 +69,8 @@ module Main where
 main :: IO ()
 main = putStrLn "Hello World!"
 
-{-# START_FILE src/FooLib.hs #-}
-module FooLib
+{-# START_FILE src/Lib.hs #-}
+module Lib
     ( plus
     ) where
 
@@ -81,14 +81,14 @@ plus = (+)
 {-# START_FILE test/Spec.hs #-}
 {-# OPTIONS_GHC -F -pgmF hspec-discover #-}
 
-{-# START_FILE test/FooLibSpec.hs #-}
-module FooLibSpec
+{-# START_FILE test/LibSpec.hs #-}
+module LibSpec
   ( spec
   )
 where
 
 import           Test.Hspec
-import           FooLib
+import           Lib
 
 main :: IO ()
 main = hspec spec
