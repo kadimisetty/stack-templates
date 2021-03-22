@@ -108,6 +108,10 @@ spec = do
 # {{name}}
 TODO
 
+{-# START_FILE hie.yaml #-}
+cradle:
+  stack:
+
 {-# START_FILE .gitignore #-}
 .stack-work/
 *~
