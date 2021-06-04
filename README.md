@@ -11,8 +11,8 @@ For more information, consult:
 - `hsfiles` file format
 - Mustache templating language (not strict)
 
-The templates accept parameters written as `{{example}}`. Their values are
-obtained from `~/.stack/config.yaml` under the section:
+The templates accept parameters (written as `{{example}}`) whose values are
+obtained from the following section in`~/.stack/config.yaml`:
 
 ```YAML
 templates:
@@ -20,6 +20,5 @@ templates:
         example: foo
 ```
 
-## Structure:
-- `example-template.hsfiles` which should contain the templating instructions.
-- `template-info.yml` which should contain a concise description of each template in this repository.
+## Notes:
+- `template-info.yml` contains concise descriptions of templates within this repository.
